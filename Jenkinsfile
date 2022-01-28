@@ -6,6 +6,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+		    hostname
+		    ls /
                     cp -r /media/pi/Samsung_T51/sache/phole/etc-* $WORKSPACE/
                     echo "$WORKSPACE"
 
