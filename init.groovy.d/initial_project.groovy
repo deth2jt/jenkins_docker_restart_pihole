@@ -6,11 +6,11 @@ import jenkins.plugins.git.*
 import org.jenkinsci.plugins.workflow.multibranch.*
  
 // Git repo url containing a Jenkinsfile
-String gitRepoUrl = "https://github.com/cinqict/jenkinsdev"
+String gitRepoUrl= "https://github.com/deth2jt/jenkins_docker_restart_pihole"
  
 // Job name based on repository name
 String jobName = gitRepoUrl.tokenize(".")[-2].tokenize("/")[-1]
- 
+
  
 // Create MultiBranch pipeline
 Jenkins jenkins = Jenkins.get()
