@@ -39,7 +39,7 @@ pipeline {
                         fi
 
                         if [ $i -eq 20 ] ; then
-                            echo -e "\nTimed out waiting for Pi-hole start, consult your container logs for more info (\`docker logs pihole\`)"
+                            echo -e "\nTimed out waiting for Pi-hole start, consult your container logs for more info (`docker logs pihole`)"
                             exit 1
                         fi
                     done;
