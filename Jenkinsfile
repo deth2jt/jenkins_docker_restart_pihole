@@ -8,7 +8,7 @@ pipeline {
                 sh '''
 		    hostname
 		    ls /
-                    cp -r /media/pi/Samsung_T51/sache/phole/etc-* $WORKSPACE/
+                    cp -r /tmp/etc-* $WORKSPACE/
                     echo "$WORKSPACE"
 
                     if [ "$( docker container inspect -f '{{.State.Status}}' $container_name )" == "running" ]; then

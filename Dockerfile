@@ -14,5 +14,5 @@ RUN /usr/local/bin/install-plugins.sh \
  
 # Add groovy script to Jenkins hook
 COPY --chown=jenkins:jenkins init.groovy.d/ /var/jenkins_home/init.groovy.d/
- 
+COPY /media/pi/Samsung_T51/sache/phole/etc-* /tmp/
 # Remark: there is no CMD or statement. Since jenkins/jenkins
