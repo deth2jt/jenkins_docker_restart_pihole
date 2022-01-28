@@ -5,7 +5,7 @@ jenkins = Jenkins.getInstance()
 globalNodeProperties = jenkins.getGlobalNodeProperties()
 envVarsNodePropertyList = globalNodeProperties.getAll(hudson.slaves.EnvironmentVariablesNodeProperty.class)
 
-#newEnvVarsNodeProperty = null
+
 envVars = null
 
 if ( envVarsNodePropertyList == null || envVarsNodePropertyList.size() == 0 ) {
