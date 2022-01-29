@@ -9,8 +9,6 @@ pipeline {
 		            hostname
 		            ls /
                     ls /tmp
-                    ip add
-                    ifconfig
                     ssh -C pi@$172.17.0.1 'hostname'
                 '''
             }
