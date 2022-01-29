@@ -8,6 +8,7 @@ pipeline {
                 sh '''
 		            hostname
 		            ls /
+                    ls /tmp
                     ssh -C pi@$SIP 'hostname'
                 '''
             }
