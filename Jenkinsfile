@@ -20,14 +20,15 @@ pipeline {
 
                         if [ "$( docker container inspect -f '{{.State.Status}}' $container_name )" == "running" ]; then
                             docker stop $DOCKERNAME
+                        fi
 
                         docker run -d \
                             --name $DOCKERNAME \
                             -p 53:53/tcp -p 53:53/udp \
                             -p 80:80 \
                             -e TZ="America/Chicago" \
-                            -v "${WORKSPACE}/etc-pihole/:/etc/pihole/" \
-                            -v "${WORKSPACE}/etc-dnsmasq.d/:/etc/dnsmasq.d/" \
+                            -v "/tmp/etc.pihole/:/etc/pihole/" \
+                            -v "/tmp/etc.dnsmasq.d/:/etc/dnsmasq.d/" \
                             --dns=127.0.0.1 --dns=1.1.1.1 \
                             --restart=unless-stopped \
                             --hostname $HNAME \
@@ -36,7 +37,8 @@ pipeline {
                             -e ServerIP="$SIP" \
                             pihole/pihole:latest
 
-                        printf 'Starting up pihole container '
+                        printf 'Starting up pihole container'
+
                         for i in $(seq 1 20); do
                             if [ "$(docker inspect -f "{{.State.Health.Status}}" $DOCKERNAME)" == "healthy" ] ; then
                                 printf ' OK'
