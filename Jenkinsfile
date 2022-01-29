@@ -9,7 +9,7 @@ pipeline {
 		            hostname
 		            ls /
                     ls /tmp
-                    ssh -C pi@$SIP 'hostname'
+                    ssh -C pi@$SNAME 'hostname'
                 '''
             }
         }
