@@ -9,8 +9,12 @@ pipeline {
 		            hostname
 		            ls /
                     ls /tmp
-                    ssh -o "StrictHostKeyChecking no" -C pi@localhost 'hostname'
                 '''
+                sshagent(['ssh-key-use-it']) {
+                    // some block
+                    sh "ssh -o StrictHostKeyChecking=no pi@$SIP"
+                    sh "whoami"
+                }
             }
         }
     }
