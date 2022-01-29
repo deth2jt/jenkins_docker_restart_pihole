@@ -21,7 +21,7 @@ pipeline {
                             whoami
                             echo "$WORKSPACE"
 
-                            if [ "$( docker container inspect -f "{{.State.Status}}" $container_name )" == "running" ]; then
+                            if [ "$( docker container inspect -f "{{.State.Status}}" $DOCKERNAME )" == "running" ]; then
                                 docker stop $DOCKERNAME
                             fi
 
