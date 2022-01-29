@@ -17,8 +17,9 @@ pipeline {
 
                     sh '''
 
-                        ssh -o StrictHostKeyChecking=no -t pi@$SIP >> ENDSSH
+                        ssh -o StrictHostKeyChecking=no -tt pi@$SIP >> ENDSSH
                             whoami
+                            hostname
                             echo "$WORKSPACE"
 
                             if [ "$( docker container inspect -f "{{.State.Status}}" ${DOCKERNAME} )" == "running" ]; then
