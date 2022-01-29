@@ -17,7 +17,7 @@ pipeline {
 
                     sh '''
 
-                        ssh -o StrictHostKeyChecking=no pi@$SIP '
+                        ssh -o StrictHostKeyChecking=no pi@$SIP >> ENDSSH
                             whoami
                             echo "$WORKSPACE"
 
@@ -57,7 +57,7 @@ pipeline {
                                     exit 1
                                 fi
                             done;
-                        '
+                        ENDSSH
                     '''
                 }
             }
