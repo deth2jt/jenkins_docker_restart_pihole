@@ -10,7 +10,8 @@ RUN /usr/local/bin/install-plugins.sh \
   pipeline-model-definition:latest \
   pipeline-stage-view:latest \
   git:latest \
-  credentials:latest
+  credentials:latest \
+  ssh-agent:latest
  
 # Add groovy script to Jenkins hook
 COPY --chown=jenkins:jenkins init.groovy.d/ /var/jenkins_home/init.groovy.d/
