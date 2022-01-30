@@ -16,7 +16,7 @@ pipeline {
                     //sh "whoami"
 
                     sh '''
-
+                        set -aex
                         ssh -o StrictHostKeyChecking=no -tt root@$SIP2 >> ENDSSH
                             whoami
                             hostname
