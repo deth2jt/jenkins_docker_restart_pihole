@@ -46,7 +46,7 @@ pipeline {
                             for i in $(seq 1 20); do
                                 if [ "$(docker inspect -f "{{.State.Health.Status}}" '$DOCKERNAME')" == "healthy" ] ; then
                                     printf " OK"
-                                    echo -e "\n$(docker logs '$DOCKERNAME' 2> /dev/null | grep "password:") for your $HNAME: https://'$SIP'/admin/"
+                                    echo -e "\n$(docker logs '$DOCKERNAME' 2> /dev/null | grep "password:") for your '$HNAME': https://'$SIP'/admin/"
                                     exit 0
                                 else
                                     sleep 3
