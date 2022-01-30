@@ -17,7 +17,7 @@ pipeline {
 
                     sh '''
 
-                        ssh -o StrictHostKeyChecking=no -tt pi@$SIP2 >> ENDSSH
+                        ssh -o StrictHostKeyChecking=no -tt root@$SIP2 >> ENDSSH
                             whoami
                             hostname
                             echo "$WORKSPACE"
