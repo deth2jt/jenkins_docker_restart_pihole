@@ -7,6 +7,7 @@ import com.cloudbees.plugins.credentials.*;
 // Read our values into strings from the volume mount
 privKeyText = new File('/tmp/ssh-key.priv').text.trim()
 passPhraseText = ""
+//below value does play a part, much
 sshUserText = "pi"
 
 // Get a handle on our Jenkins instance

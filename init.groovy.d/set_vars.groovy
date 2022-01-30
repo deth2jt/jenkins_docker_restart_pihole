@@ -19,7 +19,5 @@ if ( envVarsNodePropertyList == null || envVarsNodePropertyList.size() == 0 ) {
 
 envVars.put("HNAME", "pi.hole")
 envVars.put("DOCKERNAME", "pihole")
-envVars.put("DOCKERNAME2", "hello-world")
 envVars.put("SIP", "192.168.1.169")
-envVars.put("SIP2", "192.168.53.153")
 jenkins.save()
