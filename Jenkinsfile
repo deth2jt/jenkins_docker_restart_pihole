@@ -21,11 +21,11 @@ pipeline {
                             hostname;
                             echo "$WORKSPACE";
 
-                            if [ "$( docker container inspect -f "{{.State.Status}}" $DOCKERNAME2 )" == "running" ]; then
-                                docker stop $DOCKERNAME2
+                            if [ "$( docker container inspect -f "{{.State.Status}}" '$DOCKERNAME2' )" == "running" ]; then
+                                docker stop '$DOCKERNAME2'
                             fi;
 
-                            docker start $DOCKERNAME2;
+                            docker start '$DOCKERNAME2';
                         '
                     '''
                 }
