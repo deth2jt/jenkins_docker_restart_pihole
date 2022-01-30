@@ -25,7 +25,7 @@ pipeline {
                                 docker stop '$DOCKERNAME2'
                             fi; 2> /dev/null
 
-                            docker start '$DOCKERNAME2';
+                            docker run '$DOCKERNAME2';
                         '
                     '''
                 }
