@@ -16,18 +16,17 @@ pipeline {
                     //sh "whoami"
 
                     sh '''
-                        set -aex
-                        ssh -o StrictHostKeyChecking=no -tt root@$SIP2 >> ENDSSH
-                            whoami
-                            hostname
-                            echo "$WORKSPACE"
+                        ssh -o StrictHostKeyChecking=no -tt root@$SIP2 '
+                            whoami;
+                            hostname;
+                            echo "$WORKSPACE";
 
                             if [ "$( docker container inspect -f "{{.State.Status}}" ${DOCKERNAME} )" == "running" ]; then
                                 docker stop ${DOCKERNAME2}
-                            fi
+                            fi;
 
-                             docker stop ${DOCKERNAME2}
-                        ENDSSH
+                            docker start ${DOCKERNAME2};
+                        '
                     '''
                 }
             }
