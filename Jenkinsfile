@@ -23,7 +23,7 @@ pipeline {
                             echo "$WORKSPACE";
 
                             if [ "$( docker container inspect -f "{{.State.Status}}" '$DOCKERNAME' )" == "running" ]; then
-                                docker stop ${DOCKERNAME}
+                                docker stop '$DOCKERNAME'
                             fi;
 
                             docker run -d \
