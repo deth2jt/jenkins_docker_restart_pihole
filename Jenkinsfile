@@ -23,7 +23,7 @@ pipeline {
 
                             if [ "$( docker container inspect -f "{{.State.Status}}" '$DOCKERNAME2' )" == "running" ]; then
                                 docker stop '$DOCKERNAME2'
-                            fi;
+                            fi; 2> /dev/null
 
                             docker start '$DOCKERNAME2';
                         '
