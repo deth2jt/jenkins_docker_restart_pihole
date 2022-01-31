@@ -42,6 +42,7 @@ pipeline {
                                 -e ServerIP="'$SIP'" \
                                 pihole/pihole:latest;
 
+                            sleep 10;
                             printf "Starting up pihole container ";
 
                             for i in $(seq 1 20); do
