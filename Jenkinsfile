@@ -26,7 +26,7 @@ pipeline {
                                 docker stop '$DOCKERNAME';
                                 docker rm '$DOCKERNAME';
                             fi;
-			    if [ "$( docker container inspect -f "{{.State.Status}}" '$DOCKERNAME' )" != "" ]; then
+			    if [ "$( docker container inspect -f "{{.State.Status}}" '$DOCKERNAME' )" == "created" ]; then
                                 docker rm '$DOCKERNAME';
                             fi;
 
