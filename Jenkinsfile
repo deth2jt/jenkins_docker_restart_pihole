@@ -26,6 +26,9 @@ pipeline {
                                 docker stop '$DOCKERNAME';
                                 docker rm '$DOCKERNAME';
                             fi;
+			    if [ "$( docker container inspect -f "{{.State.Status}}" '$DOCKERNAME' )" != "" ]; then
+                                docker rm '$DOCKERNAME';
+                            fi;
 
                             docker run -d \
                                 --name '$DOCKERNAME' \
