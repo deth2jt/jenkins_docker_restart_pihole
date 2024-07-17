@@ -29,7 +29,7 @@ pipeline {
 			    if [ "$( docker container inspect -f "{{.State.Status}}" '$DOCKERNAME' )" == "created" ]; then
                                 docker rm '$DOCKERNAME';
                             fi;
-
+			    docker image pull '$DOCKERNAME'/'$DOCKERNAME';
                             docker run -d \
                                 --name '$DOCKERNAME' \
                                 -p 53:53/tcp -p 53:53/udp \
