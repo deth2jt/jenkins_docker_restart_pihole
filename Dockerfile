@@ -12,6 +12,7 @@ RUN jenkins-plugin-cli \
   --plugins \
   workflow-multibranch:latest \
   pipeline-model-definition:latest \
+  pipeline-stage-view:latest \
   git:latest \
   credentials:latest \
   ssh-agent:latest
