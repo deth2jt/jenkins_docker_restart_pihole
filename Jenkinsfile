@@ -41,7 +41,7 @@ pipeline {
                                 --restart=unless-stopped \
                                 --hostname '$HNAME' \
                                 -e VIRTUAL_HOST="'$HNAME'" \
-                                -e PROXY_LOCATION="'$HNAME'" \
+                                -e PROXY_LOCATION="'$HNAME':" \
                                 -e ServerIP="'$SIP'" \
                                 pihole/pihole:latest;
 
