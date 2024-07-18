@@ -40,7 +40,7 @@ pipeline {
                                 --dns=127.0.0.1 --dns=1.1.1.1 \
                                 --restart=unless-stopped \
                                 --hostname '$HNAME' \
-                                -e VIRTUAL_HOST="'$HNAME'" \
+                                -e VIRTUAL_HOST="'$HNAME':" \
                                 -e PROXY_LOCATION="'$HNAME'" \
                                 -e ServerIP="'$SIP'" \
                                 pihole/pihole:latest;
