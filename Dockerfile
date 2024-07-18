@@ -8,7 +8,8 @@ FROM  jenkins/jenkins:latest-jdk11
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
  
 # Get plugins
-RUN /usr/local/bin/install-plugins.sh \
+RUN jenkins-plugin-cli \
+  --plugins \
   workflow-multibranch:latest \
   pipeline-model-definition:latest \
   pipeline-stage-view:latest \
