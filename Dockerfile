@@ -11,6 +11,7 @@ ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
 RUN jenkins-plugin-cli \
   --plugins \
   workflow-multibranch:latest \
+  pipeline-model-definition:latest \
   git:latest \
   credentials:latest \
   ssh-agent:latest
