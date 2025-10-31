@@ -37,6 +37,7 @@ pipeline {
                                 -e TZ="America/Chicago" \
                                 -v "'$ETCPHOLE':/etc/pihole/" \
                                 -v "/tmp/etc.dnsmasq.d/:/etc/dnsmasq.d/" \
+								--dns=127.0.0.1 --dns=8.8.4.4 \
                                 --restart=unless-stopped \
                                 --hostname '$HNAME' \
                                 -e VIRTUAL_HOST="'$HNAME'" \
